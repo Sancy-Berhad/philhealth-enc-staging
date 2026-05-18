@@ -1,0 +1,58 @@
+{
+  "round": "round0",
+  "purpose": "Postman-script byte-for-byte mimicry — test whether attachment .enc files use the same envelope shape as the working /uploadeClaims request body, and whether ZeroPadding (the asymmetric response-side decoder hypothesis) helps.",
+  "patient": "SANCY FIFTEEN (PIN 190270688504)",
+  "plaintext_source": "PRN-1-0991013-001 (THIRTEEN) — patient identity in plaintext doesn't affect envelope-format scoring; what matters is the .enc byte shape.",
+  "encryption_tool": "/Users/edgardoguevarrajr/repo/ideas-philhealth-tools/postman-encrypt.mjs",
+  "cipher_key": "PHilheaLthDuMmy270329 (staging facilityCipherKey)",
+  "files": [
+    {
+      "name": "CF1.pdf.enc",
+      "plaintext": "CF1.pdf (382074 bytes binary)",
+      "type": "pdf",
+      "padding": "pkcs7",
+      "g10": false,
+      "hypothesis": "Canonical Postman script for binary PDFs"
+    },
+    {
+      "name": "CF2.pdf.enc",
+      "plaintext": "CF2.pdf (400322 bytes binary)",
+      "type": "pdf",
+      "padding": "pkcs7",
+      "g10": false,
+      "hypothesis": "Canonical Postman script for binary PDFs (second specimen — both PDFs same variant so any PDF success generalises)"
+    },
+    {
+      "name": "CSF.pdf.enc",
+      "plaintext": "ClaimSignatureForm_2018.pdf (105202 bytes binary)",
+      "type": "pdf",
+      "padding": "zero",
+      "g10": false,
+      "hypothesis": "ZeroPadding asymmetric hypothesis for binary PDFs — matches PhilHealth's response-side decoder"
+    },
+    {
+      "name": "CF4.xml.enc",
+      "plaintext": "CF4_PRN-1-0991013-001.xml (11863 bytes after G.10 padding)",
+      "type": "xml",
+      "padding": "pkcs7",
+      "g10": true,
+      "hypothesis": "Byte-identical to /uploadeClaims request envelope for XML — Postman script verbatim"
+    },
+    {
+      "name": "eSOA.xml.enc",
+      "plaintext": "eSOA_PRN-1-0991013-001.xml (3959 bytes after G.10 padding)",
+      "type": "xml",
+      "padding": "zero",
+      "g10": true,
+      "hypothesis": "ZeroPadding asymmetric hypothesis for XML — matches PhilHealth's response-side decoder"
+    }
+  ],
+  "decision_table": {
+    "CF1.pdf.enc passes": "PDFs use the canonical Postman request envelope (PKCS7). Codify.",
+    "CF2.pdf.enc passes (and CF1 too)": "Same as above; redundant confirmation.",
+    "CSF.pdf.enc passes (and CF1/CF2 fail)": "PDFs use the response-side decoder (ZeroPadding). Codify.",
+    "CF4.xml.enc passes": "XMLs use the canonical /uploadeClaims request envelope. Codify.",
+    "eSOA.xml.enc passes (and CF4 fails)": "XMLs use the response-side decoder (ZeroPadding). Codify.",
+    "All five fail": "Move to Round 1 — envelope shape variation (raw [IV‖ct], composite ASCII, etc.)"
+  }
+}
