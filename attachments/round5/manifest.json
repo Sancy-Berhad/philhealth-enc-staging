@@ -1,0 +1,14 @@
+{
+  "round": "round5",
+  "purpose": "Single-pass envelope-wrapping + base64-of-PDF pre-encryption variants. All API-canonical encryption (AES-256-CBC + PKCS7 + random IV + SHA256(facilityCipherKey)).",
+  "patient": "SANCY TWENTYTWO (PIN 190270688571)",
+  "plaintext_source": "PRN-1-0991013-001 (THIRTEEN's XMLs/PDFs)",
+  "tool": "/Users/edgardoguevarrajr/repo/ideas-philhealth-tools/encrypt-r56.mjs",
+  "files": [
+    { "name": "CF1.pdf.enc", "variant": "P3", "q1": "text",       "q2": "binary", "q3": "b64", "hypothesis": "PDFs base64-encoded BEFORE encryption; file = raw [IV||ct(b64PDF)]" },
+    { "name": "CF2.pdf.enc", "variant": "P5", "q1": "env-single", "q2": "binary", "q3": "b64", "hypothesis": "PDF wrapped in env-single JSON; encrypt envelope; file = raw [IV||ct(envelope)]" },
+    { "name": "CSF.pdf.enc", "variant": "P6", "q1": "env-single", "q2": "base64","q3": "b64", "hypothesis": "Same as P5 but file is base64-encoded after encryption" },
+    { "name": "CF4.xml.enc", "variant": "X3", "q1": "env-single", "q2": "binary",            "hypothesis": "XML wrapped in env-single JSON; encrypt envelope; file = raw [IV||ct(envelope)]" },
+    { "name": "eSOA.xml.enc","variant": "X4", "q1": "env-single", "q2": "base64",            "hypothesis": "Same as X3 but file is base64-encoded after encryption" }
+  ]
+}

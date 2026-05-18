@@ -1,0 +1,14 @@
+{
+  "round": "round6",
+  "purpose": "Double-pass envelope (canonical Annex A then re-encrypt) + base64-after on remaining text variant. All API-canonical encryption.",
+  "patient": "SANCY TWENTYTHREE (PIN 190270688598)",
+  "plaintext_source": "PRN-1-0991013-001 (THIRTEEN's XMLs/PDFs)",
+  "tool": "/Users/edgardoguevarrajr/repo/ideas-philhealth-tools/encrypt-r56.mjs",
+  "files": [
+    { "name": "CF1.pdf.enc", "variant": "P5'", "q1": "env-double", "q2": "binary", "q3": "raw", "hypothesis": "Encrypt rawPDF, build canonical Annex A around the ct, then encrypt that envelope; binary output" },
+    { "name": "CF2.pdf.enc", "variant": "P6'", "q1": "env-double", "q2": "base64", "q3": "raw", "hypothesis": "Same as P5' but base64-encoded after the second encryption" },
+    { "name": "CSF.pdf.enc", "variant": "P4",  "q1": "text",       "q2": "base64", "q3": "b64", "hypothesis": "base64(PDF) encrypted, file base64-encoded — completes the PDF base64-after row" },
+    { "name": "CF4.xml.enc", "variant": "X3'", "q1": "env-double", "q2": "binary",              "hypothesis": "Encrypt plaintext XML, build canonical Annex A around the ct, encrypt the envelope" },
+    { "name": "eSOA.xml.enc","variant": "X4'", "q1": "env-double", "q2": "base64",              "hypothesis": "Same as X3' but base64-encoded after the second encryption" }
+  ]
+}
