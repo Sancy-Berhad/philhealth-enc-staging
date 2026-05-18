@@ -1,0 +1,35 @@
+{
+  "round": "round7",
+  "purpose": "Hybrid RSA + AES attachment encryption per the new PhilHealth Guidelines PDF (received 2026-05-18). Supersedes Rounds 0-6 — all of those used symmetric-only AES with empty key1/key2/iv fields, which is the request-body envelope shape NOT the attachment shape.",
+  "patient": "SANCY TWENTYFOUR (PIN 190270688601)",
+  "tool": "/Users/edgardoguevarrajr/repo/ideas-philhealth-tools/encrypt-attachment-pnpki.mjs",
+  "spec_pdf": "Guidelines-for-the-Encryption-of-e-Claim-Attachments (1).pdf",
+  "public_key_cert": "pnpki_philhealth_eclaims_auth_cert.pem (subject CN=eclaims-test.philhealth.gov.ph, RSA 2048)",
+  "scheme": {
+    "file_cipher": "AES-256-CBC + PKCS7",
+    "aes_key": "32-byte random password (two 16-byte halves)",
+    "aes_iv": "16-byte random",
+    "rsa_padding": "RSA_PKCS1_PADDING (PKCS#1 v1.5; fallback to OAEP-SHA-1 / OAEP-SHA-256 if rejected)",
+    "envelope_fields": {
+      "docMimeType": "application/pdf or text/xml",
+      "hash": "base64(SHA-256(plaintext file bytes))",
+      "key1": "base64(RSA-encrypt(password[0:16]))",
+      "key2": "base64(RSA-encrypt(password[16:32]))",
+      "iv": "base64(RSA-encrypt(iv bytes))",
+      "doc": "base64(AES-256-CBC(plaintext file, password, iv))"
+    }
+  },
+  "files": [
+    { "name": "CF1.pdf.enc", "plaintext": "CF1.pdf (382074 B)", "mime": "application/pdf" },
+    { "name": "CF2.pdf.enc", "plaintext": "CF2.pdf (400322 B)", "mime": "application/pdf" },
+    { "name": "CSF.pdf.enc", "plaintext": "ClaimSignatureForm_2018.pdf (105202 B)", "mime": "application/pdf" },
+    { "name": "CF4.xml.enc", "plaintext": "CF4_PRN-1-0991013-001.xml (11863 B)", "mime": "text/xml" },
+    { "name": "eSOA.xml.enc", "plaintext": "eSOA_PRN-1-0991013-001.xml (3948 B)", "mime": "text/xml" }
+  ],
+  "decision_table": {
+    "All 5 PASS": "Hybrid RSA-PKCS1 + AES-CBC-PKCS7 is the canonical attachment format. Codify into EncryptionService.EncryptAttachmentAsync.",
+    "All 5 FAIL with key/decrypt error": "RSA padding is wrong — re-try with --rsa-padding oaep-sha1 first, then oaep-sha256.",
+    "All 5 FAIL with PKCS7-related error": "AES padding may be Zero — re-try with --aes-padding zero.",
+    "Mixed PASS/FAIL": "Confirms the scheme; investigate the failing-file specifics (size boundary, MIME, etc.)."
+  }
+}
