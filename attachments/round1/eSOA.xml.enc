@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  eSOA companion XML for claim PRN-1-0991013-001 (St. Michael Medical Hospital, SANCY THIRTEEN).
+  Generated 2026-05-15. TB-only inpatient admission 04-23-2026 to 04-25-2026.
+  Case rate CR0314 TUBERCULOSIS PULMONARY: PHP 19,110 = HCI 13,377 + PF 5,733.
+-->
+<eSOA pHciPan="H41004706" pHciTransmittalId="ECLAIMS-3.0-270329-DUMMY">
+
+  <SummaryOfFees>
+
+    <RoomAndBoard>
+      <SummaryOfFee
+        pChargesNetOfApplicableVat="11000.00"
+        pSeniorCitizenDiscount="0"
+        pPWDDiscount="0"
+        pPCSO="0"
+        pDSWD="0"
+        pDOHMAP="0"
+        pHMO="0"/>
+    </RoomAndBoard>
+
+    <DrugsAndMedicine>
+      <SummaryOfFee
+        pChargesNetOfApplicableVat="150.00"
+        pSeniorCitizenDiscount="0"
+        pPWDDiscount="0"
+        pPCSO="0"
+        pDSWD="0"
+        pDOHMAP="0"
+        pHMO="0"/>
+    </DrugsAndMedicine>
+
+    <LaboratoryAndDiagnostic>
+      <SummaryOfFee
+        pChargesNetOfApplicableVat="1400.00"
+        pSeniorCitizenDiscount="0"
+        pPWDDiscount="0"
+        pPCSO="0"
+        pDSWD="0"
+        pDOHMAP="0"
+        pHMO="0"/>
+    </LaboratoryAndDiagnostic>
+
+    <OperatingRoomFees>
+      <SummaryOfFee
+        pChargesNetOfApplicableVat="0.00"
+        pSeniorCitizenDiscount="0"
+        pPWDDiscount="0"
+        pPCSO="0"
+        pDSWD="0"
+        pDOHMAP="0"
+        pHMO="0"/>
+    </OperatingRoomFees>
+
+    <MedicalSupplies>
+      <SummaryOfFee
+        pChargesNetOfApplicableVat="827.00"
+        pSeniorCitizenDiscount="0"
+        pPWDDiscount="0"
+        pPCSO="0"
+        pDSWD="0"
+        pDOHMAP="0"
+        pHMO="0"/>
+    </MedicalSupplies>
+
+    <Others>
+      <SummaryOfFee
+        pChargesNetOfApplicableVat="0.00"
+        pSeniorCitizenDiscount="0"
+        pPWDDiscount="0"
+        pPCSO="0"
+        pDSWD="0"
+        pDOHMAP="0"
+        pHMO="0"/>
+    </Others>
+
+    <PhilHealth pTotalCaseRateAmount="13377.00"/>
+    <Balance pAmount="0.00"/>
+
+  </SummaryOfFees>
+
+  <ProfessionalFees>
+
+    <ProfessionalFee>
+      <ProfessionalInfo
+        pPAN="1504-2400015-3"
+        pFirstName="LIFE"
+        pMiddleName="GOES"
+        pLastName="ON"
+        pSuffixName=""/>
+      <SummaryOfFee
+        pChargesNetOfApplicableVat="5733.00"
+        pSeniorCitizenDiscount="0"
+        pPWDDiscount="0"
+        pPCSO="0"
+        pDSWD="0"
+        pDOHMAP="0"
+        pHMO="0"/>
+    </ProfessionalFee>
+
+    <PhilHealth pTotalCaseRateAmount="5733.00"/>
+    <Balance pAmount="0.00"/>
+
+  </ProfessionalFees>
+
+  <ItemizedBillingItems>
+
+    <ItemizedBillingItem
+      pServiceDate="04-23-2026"
+      pItemCode="1897"
+      pItemName="ROOM AND BOARD"
+      pUnitOfMeasurement="DAY"
+      pUnitPrice="5500.00"
+      pQuantity="2"
+      pTotalAmount="11000.00"
+      pCategory="RoomAndBoard"/>
+
+    <ItemizedBillingItem
+      pServiceDate="04-24-2026"
+      pItemCode="IRE010000000489TAB490000000000"
+      pItemName="ISONIAZID + RIFAMPICIN + ETHAMBUTOL 75 mg + 150 mg + 275 mg TABLET"
+      pUnitOfMeasurement="TAB"
+      pUnitPrice="15.00"
+      pQuantity="10"
+      pTotalAmount="150.00"
+      pCategory="DrugsAndMedicine"/>
+
+    <ItemizedBillingItem
+      pServiceDate="04-23-2026"
+      pItemCode="1545"
+      pItemName="HEMATOLOGY: CBC"
+      pUnitOfMeasurement="TEST"
+      pUnitPrice="500.00"
+      pQuantity="1"
+      pTotalAmount="500.00"
+      pCategory="LaboratoryAndDiagnostic"/>
+
+    <ItemizedBillingItem
+      pServiceDate="04-23-2026"
+      pItemCode="1879"
+      pItemName="MICROBIOLOGY: SPUTUM AFB"
+      pUnitOfMeasurement="TEST"
+      pUnitPrice="300.00"
+      pQuantity="3"
+      pTotalAmount="900.00"
+      pCategory="LaboratoryAndDiagnostic"/>
+
+    <ItemizedBillingItem
+      pServiceDate="04-23-2026"
+      pItemCode="1288"
+      pItemName="FACE MASK (EAR LOOP)DISPOSABLE"
+      pUnitOfMeasurement="BOX"
+      pUnitPrice="82.70"
+      pQuantity="10"
+      pTotalAmount="827.00"
+      pCategory="MedicalSupplies"/>
+
+  </ItemizedBillingItems>
+
+</eSOA>
