@@ -1,0 +1,73 @@
+<eCLAIMS pUserName=":ECLAIMS-3.0-270329-DUMMY" pUserPassword="" pHospitalCode="270329" pHospitalEmail="stmichael@gmail.com" pServiceProvider="IDEAS-Sancy Berhad">
+  <eTRANSMITTAL pHospitalTransmittalNo="H41004706570013" pTotalClaims="1">
+    <CLAIM pClaimNumber="PRN-1-0991013-001" pTrackingNumber="" pPhilhealthClaimType="DRG" pPatientType="I" pIsEmergency="N">
+      <CF1 pMemberPIN="190270688482" pMemberLastName="SANCY LN THIRTEEN" pMemberFirstName="SANCY FN THIRTEEN" pMemberSuffix="" pMemberMiddleName="SANCY MN THIRTEEN" pMemberBirthDate="01-14-1974" pMemberShipType="NS" pMailingAddress="ERMITA MANILA CITY METRO MANILA PHILIPPINES 1000" pZipCode="1000" pMemberSex="M" pLandlineNo="87721001" pMobileNo="09178812348" pEmailAddress="sancy.thirteen@yahoo.com" pPatientIs="M" pPatientPIN="190270688482" pPatientLastName="SANCY LN THIRTEEN" pPatientFirstName="SANCY FN THIRTEEN" pPatientSuffix="" pPatientMiddleName="SANCY MN THIRTEEN" pPatientBirthDate="01-14-1974" pPatientSex="M" pPEN="003000057152" pEmployerName="" />
+      <CF2 pPatientReferred="N" pReferredIHCPAccreCode="" pAdmissionDate="04-23-2026" pAdmissionTime="08:00:00AM" pDischargeDate="04-25-2026" pDischargeTime="10:00:00AM" pDisposition="I" pExpiredDate="" pExpiredTime="" pReferralIHCPAccreCode="" pReferralReasons="" pAccommodationType="P" pHasAttachedSOA="Y">
+        <DIAGNOSIS pAdmissionDiagnosis="A16.9 Tuberculous disease">
+          <DISCHARGE pDischargeDiagnosis="A16.9 Tuberculous disease">
+            <ICDCODE pICDCode="A16.9" />
+          </DISCHARGE>
+        </DIAGNOSIS>
+        <SPECIAL>
+          <PROCEDURES>
+            <HEMODIALYSIS />
+            <PERITONEAL />
+            <LINAC />
+            <COBALT />
+            <TRANSFUSION />
+            <BRACHYTHERAPHY />
+            <CHEMOTHERAPY />
+            <DEBRIDEMENT />
+            <IMRT />
+          </PROCEDURES>
+          </SPECIAL>
+        <PROFESSIONALS pDoctorAccreCode="1504-2400015-3" pDoctorLastName="ON" pDoctorFirstName="LIFE" pDoctorMiddleName="GOES" pDoctorSuffix="" pWithCoPay="N" pDoctorCoPay="" pDoctorSignDate="04-25-2026" />
+        <CONSUMPTION pEnoughBenefits="N">
+          <HCIFEES pTotalActualCharges="13377.00" pDiscount="0.00" pPhilhealthBenefit="13377.00" pTotalAmount="0.00" pMemberPatient="N" pHMO="N" pOthers="N" />
+          <PROFFEES pTotalActualCharges="5733.00" pDiscount="0.00" pPhilhealthBenefit="5733.00" pTotalAmount="0.00" pMemberPatient="N" pHMO="N" pOthers="N" />
+          <PURCHASES pDrugsMedicinesSupplies="N" pDMSTotalAmount="150.00" pExaminations="N" pExamTotalAmount="0.00" />
+        </CONSUMPTION>
+        <APR>
+          <APRBYPATSIG pDateSigned="04-25-2026" />
+        </APR>
+      </CF2>
+      <ALLCASERATE>
+        <CASERATE pCaseRateCode="CR0314" pICDCode="A16.9" pRVSCode="" pCaseRateAmount="19110.00" />
+      </ALLCASERATE>
+      <CF3>
+        <CF3_OLD pChiefComplaint="Productive cough of 3 weeks duration with hemoptysis, low-grade fever, night sweats, and unintentional weight loss of 5 kg" pBriefHistory="52-year-old male, non-smoker, no known TB contact, presented with 3-week history of productive cough with blood-streaked sputum, intermittent low-grade fever (Tmax 38.2 C), drenching night sweats, and unintentional weight loss of 5 kg over the past month. No prior history of PTB or anti-TB therapy. Admitted for diagnostic workup and treatment initiation." pCourseWard="Sputum AFB returned 3+ positive on Day 1. Started on standard 4-drug anti-TB regimen (HRZE) intensive phase. Tolerated medications well; afebrile by Day 3. Counselled on adherence, drug side-effects monitoring, and the 6-month treatment duration. Discharged stable on continued HRZE intensive phase with outpatient TB-DOTS follow-up at the nearest health center." pPertinentFindings="Thin, ambulatory, mildly tachypneic. Lung: decreased breath sounds and fine crackles over left upper lobe. CXR PA: cavitary infiltrate L upper lobe consistent with reactivation PTB. Sputum AFB: 3+ positive on direct smear. Extremities: no edema, no compartment tenderness, distal pulses 2+ bilaterally.">
+          <PHEX pBP="120/80" pCR="88" pRR="22" pTemp="37.8" pHEENT="Anicteric sclerae, no cervical lymphadenopathy" pChestLungs="Decreased BS L upper lobe, fine crackles" pCVS="Regular rhythm, no murmurs" pAbdomen="Soft, non-tender, no organomegaly" pGUIE="Unremarkable" pSkinExtremities="No edema, distal pulses 2+ bilaterally, no clubbing" pNeuroExam="Awake, alert, oriented x3" />
+            </CF3_OLD>
+        <CF3_NEW>
+          <ADMITREASON pBriefHistory="3-week history of productive cough with hemoptysis, low-grade fever, night sweats, weight loss of 5 kg. Sputum AFB positive 3+ on initial workup." pReferredReason="Smear-positive pulmonary tuberculosis (A16.9), for inpatient anti-TB treatment initiation" pIntensive="Y" pMaintenance="N">
+            <CLINICAL pCriteria="COUGH" />
+            <CLINICAL pCriteria="CHEST PAIN/DISCOMFORT" />
+            <CLINICAL pCriteria="WEIGHT LOSS" />
+            <CLINICAL pCriteria="SWEATING" />
+            <LABDIAG pCriteria="SPUTUM AFB SMEAR POSITIVE 3+" />
+            <LABDIAG pCriteria="CHEST X-RAY: LEFT UPPER LOBE CAVITARY INFILTRATE" />
+            <PHEX pBP="120/80" pCR="88" pRR="22" pTemp="37.8" pHEENT="Anicteric sclerae, no cervical lymphadenopathy" pChestLungs="Decreased BS L upper lobe, fine crackles" pCVS="Regular rhythm, no murmurs" pAbdomen="Soft, non-tender, no organomegaly" pGUIE="Unremarkable" pSkinExtremities="No edema, distal pulses 2+ bilaterally, no clubbing" pNeuroExam="Awake, alert, oriented x3" />
+          </ADMITREASON>
+          <COURSE>
+            <WARD pCourseDate="04-25-2026" pFindings="Tolerating HRZE regimen well; afebrile day 3; ambulatory; appetite improving" pAction="Discharge on continued HRZE intensive phase; refer to TB-DOTS center for daily directly-observed therapy; chest CXR repeat at 2 months; sputum AFB follow-up monthly" />
+          </COURSE>
+        </CF3_NEW>
+      </CF3>
+      <PARTICULARS>
+        <DRGMED pPurchaseDate="04-24-2026" pDrugCode="IRE010000000489TAB490000000000" pPNDFCode="TAB49" pGenericName="ISONIAZID + RIFAMPICIN + ETHAMBUTOL" pBrandName="ISONIAZID + RIFAMPICIN + ETHAMBUTOL 75 mg + 150 mg + 275 mg TABLET" pPreparation="75 mg + 150 mg + 275 mg . TABLET" pQuantity="10" />
+      </PARTICULARS>
+      <RECEIPTS>
+        <RECEIPT pCompanyName="St. Michael Medical Hospital" pCompanyTIN="123-456-789-000" pBIRPermitNumber="12345" pReceiptNumber="1234567895" pReceiptDate="04-25-2026" pVATExemptSale="0.00" pVAT="12" pTotal="168">
+          <ITEM pQuantity="10" pUnitPrice="15" pDescription="ISONIAZID + RIFAMPICIN + ETHAMBUTOL 75 mg + 150 mg + 275 mg TABLET" pAmount="150" />
+        </RECEIPT>
+      </RECEIPTS>
+      <DOCUMENTS>
+        <DOCUMENT pDocumentType="CF1" pDocumentURL="https://gist.githubusercontent.com/edgieguevarra-etp/2a1da08cbdc2c64099e3e04f58a4ec83/raw/CF1-13.pdf.enc" />
+        <DOCUMENT pDocumentType="CF2" pDocumentURL="https://gist.githubusercontent.com/edgieguevarra-etp/2a1da08cbdc2c64099e3e04f58a4ec83/raw/CF2-13.pdf.enc" />
+        <DOCUMENT pDocumentType="CSF" pDocumentURL="https://gist.githubusercontent.com/edgieguevarra-etp/2a1da08cbdc2c64099e3e04f58a4ec83/raw/CSF-13.pdf.enc" />
+        <DOCUMENT pDocumentType="CF4" pDocumentURL="https://gist.githubusercontent.com/edgieguevarra-etp/2a1da08cbdc2c64099e3e04f58a4ec83/raw/CF4-13.xml.enc" />
+        <DOCUMENT pDocumentType="SOA" pDocumentURL="https://gist.githubusercontent.com/edgieguevarra-etp/2a1da08cbdc2c64099e3e04f58a4ec83/raw/eSOA-13.xml.enc" />
+      </DOCUMENTS>
+    </CLAIM>
+  </eTRANSMITTAL>
+</eCLAIMS>
