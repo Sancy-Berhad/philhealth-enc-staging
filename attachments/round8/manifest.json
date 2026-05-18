@@ -1,0 +1,29 @@
+{
+  "round": "round8",
+  "purpose": "Cover the 5 RSA×AES padding combos not exercised in Round 7. With Round 7's pkcs1+pkcs7 baseline, this completes the 3 RSA paddings × 2 AES paddings = 6-combo matrix.",
+  "patient": "SANCY TWENTYFIVE (PIN 190270688628)",
+  "tool": "/Users/edgardoguevarrajr/repo/ideas-philhealth-tools/encrypt-attachment-pnpki.mjs",
+  "spec_pdf": "Guidelines-for-the-Encryption-of-e-Claim-Attachments (1).pdf",
+  "public_key_cert": "pnpki_philhealth_eclaims_auth_cert.pem",
+  "scheme": "Hybrid RSA + AES (per PNPKI spec). All 5 slots vary only on RSA padding and AES padding; everything else identical to Round 7.",
+  "files": [
+    { "name": "CF1.pdf.enc", "rsa_padding": "oaep-sha1",   "aes_padding": "pkcs7" },
+    { "name": "CF2.pdf.enc", "rsa_padding": "oaep-sha256", "aes_padding": "pkcs7" },
+    { "name": "CSF.pdf.enc", "rsa_padding": "pkcs1",       "aes_padding": "zero"  },
+    { "name": "CF4.xml.enc", "rsa_padding": "oaep-sha1",   "aes_padding": "zero"  },
+    { "name": "eSOA.xml.enc","rsa_padding": "oaep-sha256", "aes_padding": "zero"  }
+  ],
+  "rsa_aes_matrix": {
+    "pkcs1 + pkcs7": "Round 7 (all 5 slots)",
+    "oaep-sha1 + pkcs7": "Round 8 CF1.pdf",
+    "oaep-sha256 + pkcs7": "Round 8 CF2.pdf",
+    "pkcs1 + zero": "Round 8 CSF.pdf",
+    "oaep-sha1 + zero": "Round 8 CF4.xml",
+    "oaep-sha256 + zero": "Round 8 eSOA.xml"
+  },
+  "decision_table": {
+    "Round 7 PASS": "pkcs1 + pkcs7 is canonical. Round 8 may produce additional passes (defensive interop).",
+    "Round 7 FAIL + Round 8 has PASS": "The passing slot's (rsa, aes) tuple is canonical.",
+    "Both rounds all FAIL": "RSA padding / AES padding not the differentiator. Investigate key1/key2 ordering, AES key derivation, or request a fresh production PEM."
+  }
+}
